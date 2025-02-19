@@ -1,0 +1,224 @@
+// ARTICLE
+.article {
+    width: 98%;
+    height: auto;
+    margin-bottom: 5rem;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #ffffff;
+  
+    &__link {
+      color: #2e8d43;
+      font-size: clamp(14px, 2.5vw, 20px);
+      line-height: 20px;
+    }
+  
+    &__content {
+      display: flex;
+      width: 100%;
+      height: auto;
+    }
+  
+    &__hero {
+      width: 65%;
+      height: 925px;
+      color: #ffffff;
+    }
+  
+    &__hero-section {
+      &--top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 65%;
+        margin-bottom: 20px;
+        padding: 20px;
+        padding-top: 35px;
+        background-image: url(/img/slider-img/1.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 15px;
+      }
+  
+      &--bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 33%;
+        padding: 20px;
+        padding-top: 35px;
+        background-color: #2e8d43;
+        border-radius: 15px;
+      }
+    }
+  
+    &__hero-tags {
+      &--top {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        height: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: 12px;
+        color: #2e8d43;
+        background-color: #ffffff;
+        border-radius: 38px;
+      }
+  
+      &--bottom {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        height: auto;
+      }
+    }
+  
+    &__hero-tag {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-right: 10px;
+      width: max-content;
+      height: 35px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
+      font-size: 12px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 38px;
+  
+      &--special {
+        color: #2e8d43;
+        background-color: #ffffff;
+      }
+    }
+  
+    &__sidebar {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      margin-left: 20px;
+      padding-left: 20px;
+      width: 35%;
+      height: 925px;
+      border-left: 1px solid #c4c4c4;
+  
+      &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #c4c4c4;
+      }
+  
+      &-title {
+        margin: 0;
+        font-family: "Druk";
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 0;
+      }
+  
+      &-content {
+        display: flex;
+        width: 100%;
+        height: 65%;
+      }
+  
+      &-preview {
+        width: 45%;
+        height: 100%;
+        background-image: url(/img/image\ 3137.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 6.5px;
+      }
+  
+      &-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 55%;
+        height: 100%;
+      }
+  
+      &-text {
+        font-size: 16px;
+        line-height: 22px;
+      }
+  
+      &-date {
+        width: max-content;
+        padding: 10px;
+        color: #202020;
+        background-color: #efefef;
+        border-radius: 38px;
+      }
+  
+      &-link {
+        color: #2e8d43;
+      }
+  
+      &-articles {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+        height: 50%;
+      }
+  
+      &-terms {
+        display: flex;
+        flex-wrap: wrap;
+        height: max-content;
+      }
+  
+      &-term {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: max-content;
+        height: 35px;
+        color: #202020;
+        font-size: 12px;
+        background-color: #efefef;
+        border-radius: 38px;
+      }
+  
+      &-item--terms {
+        border-bottom: none;
+      }
+  
+      &-title {
+        margin-top: 20px;
+      }
+    }
+  
+    @media screen and (max-width: 1500px) {
+      &__sidebar {
+        display: none;
+      }
+  
+      &__hero {
+        width: 100%;
+      }
+  
+      .hero-section__article__hero-section--top {
+        height: 50%;
+      }
+  
+      &__hero-section--bottom {
+        height: 50%;
+      }
+    }
+  }

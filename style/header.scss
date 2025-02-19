@@ -1,0 +1,115 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 20px;
+    width: 98%;
+    height: 8vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+  
+    &__logo {
+      width: 100px;
+      height: 25px;
+      margin-right: 50px;
+    }
+  
+    &__nav-list {
+      display: flex;
+    }
+  
+    &__nav-item {
+      margin-right: 20px;
+    }
+  
+    &__menu {
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      width: max-content;
+      height: 100%;
+    }
+  
+    &__menu-element {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+  
+    &__menu-icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    &__menu-title {
+      padding-left: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    &__profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      height: 38px;
+      background-color: #efefef;
+      border-radius: 20px;
+    }
+  
+    &__profile-name {
+      margin-left: 10px;
+      margin-right: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    &__profile-avatar {
+      width: 32px;
+      height: 32px;
+      background-image: url(/img/profile-avatar.jfif);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 150%;
+      border-radius: 50px;
+    }
+  
+    &__burger-menu {
+      display: none;
+    }
+  
+    @media screen and (max-width: 768px) {
+      &__navbar {
+        display: none;
+      }
+  
+      .menu-element {
+        display: none;
+      }
+  
+      &__menu-element {
+        background-color: #ffffff;
+      }
+  
+      &__menu-title {
+        display: none;
+      }
+  
+      &__logo {
+        position: absolute;
+        left: 35%;
+        margin-right: 0;
+      }
+  
+      &__burger-menu {
+        display: block;
+      }
+    }
+  }
