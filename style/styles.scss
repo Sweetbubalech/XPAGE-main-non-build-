@@ -1,8 +1,3 @@
-@import "header";
-@import "slider";
-@import "main";
-@import "article";
-@import "footer";
 
 @font-face {
   font-family: "Druk";
@@ -62,8 +57,9 @@ h2 {
   margin: 0;
   text-transform: uppercase;
   font-family: "Druk";
-  font-size: 4rem;
+  font-size: clamp(1.3rem, 2.5vw, 4rem);
   line-height: 4.8rem;
+
 }
 
 h3 {
@@ -71,7 +67,7 @@ h3 {
   font-family: "Druk";
   text-transform: uppercase;
   font-size: 3rem;
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
   line-height: clamp(1.8rem, 2.5vw, 3.6rem);
 }
 
@@ -108,5 +104,854 @@ h3 {
   h2 {
     font-size: 1.8rem;
     line-height: 2.2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 20px;
+  width: 98%;
+  height: 8vh;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+
+  &__logo {
+    width: 100px;
+    height: 25px;
+    margin-right: 50px;
+  }
+
+  &__nav{
+    position: absolute;
+    left: 14%;
+  }
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item {
+    margin-right: 20px;
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    width: max-content;
+    height: 100%;
+  }
+
+  &__menu-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  &__menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__menu-title {
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 38px;
+    background-color: #efefef;
+    border-radius: 20px;
+  }
+
+  &__profile-name {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__profile-avatar {
+    width: 32px;
+    height: 32px;
+    background-image: url(/img/profile-avatar.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    border-radius: 50px;
+  }
+
+  &__burger-menu {
+    display: none;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .header{
+      background-color: red;
+    }
+
+    .header__logo{
+      margin-right:0;
+    }
+
+    .header__menu{
+      position: relative;
+    }
+    .header__nav{
+      display: none;
+    }
+    .header__menu{
+      margin-right: 0;
+    }
+
+    .header__menu-element {
+      display: none;
+    }
+
+    &__profile {
+      background-color: #ffffff;
+    }
+
+    &__profile-name {
+      display: none;
+    }
+
+    &__burger-menu {
+      display: block;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.slider {
+  position: relative;
+  margin-bottom: 5rem;
+  width: 98%;
+  height: 86vh;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__slide {
+    min-width: 100%;
+    height: 86vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+
+    &--1 {
+      background-image: url(/img/slider-img/1.webp);
+    }
+
+    &--2 {
+      background-image: url(/img/slider-img/2.webp);
+    }
+
+    &--3 {
+      background-image: url(/img/slider-img/3.webp);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+  }
+
+  &__title {
+    color: #ffffff;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: max-content;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 64px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 22px;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #f36722;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    height: 70vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 70vh;
+
+    &__slide {
+      min-width: 100%;
+      height: 70vh;
+      box-sizing: border-box;
+
+      &--1 {
+        background-image: url(/img/slider-img/1-mobile.webp);
+      }
+
+      &--2 {
+        background-image: url(/img/slider-img/2-mobile.webp);
+      }
+
+      &--3 {
+        background-image: url(/img/slider-img/3-mobile.webp);
+      }
+    }
+
+    &__title {
+      width: 90%;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 98%;
+  height: auto;
+  border-radius: 20px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: #f36722;
+    font-size: clamp(12px, 2.5vw, 20px);
+    line-height: 20px;
+  }
+
+  &__link-icon{
+    margin-left: 10px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: 85vh;
+    border-radius: 20px;
+    background-color: #ffffff;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #202020;
+    }
+  }
+
+  &__card-image {
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    &--1 {
+      background-image: url(/img/1.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-bottom-left-radius: 300px;
+      border-bottom-right-radius: 300px;
+    }
+
+    &--2 {
+      background-image: url(/img/ball\ cutted.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-x: right;
+      background-position-y: top;
+    }
+
+    &--3 {
+      background-image: url(/img/3.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-bottom-left-radius: 300px;
+      border-bottom-right-radius: 300px;
+    }
+  }
+
+  &__card-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 40%;
+    padding: 20px;
+  }
+
+  &__card-title {
+    margin: 0;
+    font-family: "Druk";
+  }
+
+  &__card-text {
+    font-family: "Commissioner-Regular";
+    display: block;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &__card-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+    height: 64px;
+    border-radius: 20px;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+    line-height: 22px;
+    color: #efefef;
+    background-color: #f36722;
+    display: none;
+  }
+
+  &__card:hover &__card-button {
+    display: flex;
+  }
+
+  @media screen and (max-width: 1800px) {
+    align-items: center;
+
+    &__card {
+      width: 30%;
+      height: 70vh;
+    }
+  }
+
+  @media screen and (max-width: 1500px) {
+    &__card {
+      width: 30%;
+      height: 70vh;
+    }
+
+    &__card-description {
+      height: 50%;
+    }
+
+    &__header {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__content {
+      width: 100%;
+    }
+
+    &__card {
+      width: 32%;
+      height: 70vh;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    &__content {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__card {
+      width: 100%;
+      height: 70vh;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// ARTICLE
+.article {
+  width: 98%;
+  height: max-content;
+  margin-bottom: 5rem;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: #2e8d43;
+    font-size: clamp(12px, 2.5vw, 20px);
+    line-height: 20px;
+  }
+
+  &__link-icon{
+    margin-left: 10px;
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  &__hero {
+    width: 65%;
+    height: 925px;
+    color: #ffffff;
+  }
+
+  &__hero-section {
+    &--top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 65%;
+      margin-bottom: 20px;
+      padding: 20px;
+      padding-top: 35px;
+      background-image: url(/img/slider-img/1.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 15px;
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 33%;
+      padding: 20px;
+      padding-top: 35px;
+      background-color: #2e8d43;
+      border-radius: 15px;
+    }
+  }
+
+  &__hero-tags {
+    &--top {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      height: 35px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #2e8d43;
+      background-color: #ffffff;
+      border-radius: 38px;
+    }
+
+    &--bottom {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  &__hero-tag {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: max-content;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 38px;
+
+    &--special {
+      color: #2e8d43;
+      background-color: #ffffff;
+    }
+  }
+
+  &__sidebar {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    margin-left: 20px;
+    padding-left: 20px;
+    width: 35%;
+    height: 925px;
+    border-left: 1px solid #c4c4c4;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #c4c4c4;
+    }
+
+    &-title {
+      margin: 0;
+      font-family: "Druk";
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0;
+    }
+
+    &-content {
+      display: flex;
+      width: 100%;
+      height: 65%;
+    }
+
+    &-preview {
+      width: 45%;
+      height: 100%;
+      background-image: url(/img/image\ 3137.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 6.5px;
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 55%;
+      height: 100%;
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &-date {
+      width: max-content;
+      padding: 10px;
+      color: #202020;
+      background-color: #efefef;
+      border-radius: 38px;
+    }
+
+    &-link {
+      color: #2e8d43;
+    }
+
+    &-articles {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 70%;
+      height: 50%;
+    }
+
+    &-terms {
+      display: flex;
+      flex-wrap: wrap;
+      height: max-content;
+    }
+
+    &-term {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-right: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: max-content;
+      height: 35px;
+      color: #202020;
+      font-size: 12px;
+      background-color: #efefef;
+      border-radius: 38px;
+    }
+
+    &-item--terms {
+      border-bottom: none;
+    }
+
+    &-title {
+      margin-top: 20px;
+    }
+  }
+
+
+  @media screen and (max-width: 1500px) {
+      padding: 20px;
+      padding-bottom: 40px;
+
+    &__sidebar {
+      display: none;
+    }
+
+    &__hero {
+      width: 100%;
+    }
+
+    &__hero-section--top {
+      height: 50%;
+    }
+
+    &__hero-section--bottom {
+      height: 50%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 0;
+
+    &__header{
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    &__hero-section--top {
+      margin-bottom: 10px;
+    }
+
+    .article__hero-tags--bottom{
+      width: 100%;
+    }
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 40px;
+  width: 100%;
+  height: 65vh;
+  border-top: 1px solid #202020;
+  background-image: url(/img/ball.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position-x: 240%;
+  background-position-y: 20%;
+
+  &__content {
+    position: relative;
+    width: 60%;
+    height: 100%;
+  }
+
+  &__social {
+    display: flex;
+    margin-top: 50px;
+    width: max-content;
+    height: max-content;
+
+    &-item {
+      display: flex;
+      align-items: center;
+    }
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 20px;
+    }
+
+    &-text {
+      width: 50%;
+      font-family: "Commissioner-Regular";
+    }
+  }
+
+  &__watermark {
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &__qr {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    width: 350px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 38px;
+
+    &-icon {
+      width: 180px;
+    }
+
+    &-text {
+      font-family: "Commissioner-Regular";
+      color: #747474;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &-instruction {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    background-position-x: 260%;
+    background-position-y: 60%;
+
+    &__qr {
+      display: none;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__title {
+      width: 100%;
+    }
+
+    &__social {
+      flex-direction: column;
+
+      &-item {
+        margin-top: 1rem;
+      }
+    }
+
+    &__watermark {
+      width: 100%;
+    }
   }
 }
